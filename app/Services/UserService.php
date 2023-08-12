@@ -1,5 +1,7 @@
 <?php
 namespace App\Services;
-interface UserService{
-    
+
+interface UserService
+{
+    function login(string $user, string $password): bool;
 }

@@ -2,14 +2,12 @@
 
 namespace Tests\Feature;
 
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use App\Services\UserService;
 use Tests\TestCase;
 
 class UserServiceTest extends TestCase
 {
-    /** 
+    /**
      * A basic feature test example.
      *
      * @return void
@@ -23,9 +21,10 @@ class UserServiceTest extends TestCase
         $this->userService = $this->app->make(UserService::class);
     }
 
-
-    public function testSample()
+    public function testLoginSuccesss()
     {
-        self::assertTrue(true);
+        // var_dump($this->userService);
+        $this->assertTrue($this->userService->login('groove', 'tes'));
     }
+
 }

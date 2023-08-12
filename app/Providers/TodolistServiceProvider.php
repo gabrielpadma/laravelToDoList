@@ -2,20 +2,20 @@
 
 namespace App\Providers;
 
-use App\Services\Impl\UserServiceImpl;
-use App\Services\UserService;
+use App\Services\Impl\TodoListImpl;
+use App\Services\TodoListService;
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
 
-class UserServiceProvider extends ServiceProvider implements DeferrableProvider
+class TodolistServiceProvider extends ServiceProvider implements DeferrableProvider
 {
-    public $singletons = [UserService::class => UserServiceImpl::class];
+
+    public $singletons = [TodoListService::class => TodoListImpl::class];
 
     public function provides()
     {
-        return [UserService::class];
+        return [TodoListService::class];
     }
-
     /**
      * Register services.
      *
@@ -23,7 +23,7 @@ class UserServiceProvider extends ServiceProvider implements DeferrableProvider
      */
     public function register()
     {
-
+        //
     }
 
     /**
